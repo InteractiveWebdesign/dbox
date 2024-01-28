@@ -15,6 +15,7 @@
 
 # Ignore variable data
 /.env
+.ssh/*
 /backups/*
 
 # Ignore Data dirs
