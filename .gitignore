@@ -24,7 +24,8 @@
 /ca/*
 
 # Ignore compose override file
-/docker-compose.override.yml
+# RW uitgezet lijkt me niet kwaad kunnen
+# /docker-compose.override.yml
 
 # Ignore logs
 /log/apache-2.2/*
