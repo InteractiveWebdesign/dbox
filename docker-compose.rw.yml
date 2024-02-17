@@ -32,30 +32,30 @@ services:
   # PHP
   # -----------------------------------------------------------------------------------------------
 
-  php71:
-    <<: *default-php
-    image: devilbox/php-fpm:7.1-work
-    hostname: php71
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.206
-    volumes:
-      # Specific volumes
-      - ${DEVILBOX_PATH}/cfg/php-ini-7.1:/etc/php-custom.d:ro${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/cfg/php-fpm-7.1:/etc/php-fpm-custom.d:ro${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/cfg/php-startup-7.1:/startup.1.d:rw${MOUNT_OPTIONS}
-      # Generic volumes
-      - ${HOST_PATH_HTTPD_DATADIR}:/shared/httpd:rw${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/supervisor:/etc/supervisor/custom.d:rw${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/autostart:/startup.2.d:rw${MOUNT_OPTIONS}
-      - devilbox-mail:/var/mail:rw${MOUNT_OPTIONS}
-      # personal volumes
-      - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/log/php-fpm-7.1:/var/log/php:rw${MOUNT_OPTIONS}
-      ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
+  # php71:
+  #   <<: *default-php
+  #   image: devilbox/php-fpm:7.1-work
+  #   hostname: php71
+  #   networks:
+  #     app_net:
+  #       ipv4_address: 172.16.238.206
+  #   volumes:
+  #     # Specific volumes
+  #     - ${DEVILBOX_PATH}/cfg/php-ini-7.1:/etc/php-custom.d:ro${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/cfg/php-fpm-7.1:/etc/php-fpm-custom.d:ro${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/cfg/php-startup-7.1:/startup.1.d:rw${MOUNT_OPTIONS}
+  #     # Generic volumes
+  #     - ${HOST_PATH_HTTPD_DATADIR}:/shared/httpd:rw${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/supervisor:/etc/supervisor/custom.d:rw${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/autostart:/startup.2.d:rw${MOUNT_OPTIONS}
+  #     - devilbox-mail:/var/mail:rw${MOUNT_OPTIONS}
+  #     # personal volumes
+  #     - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/log/php-fpm-7.1:/var/log/php:rw${MOUNT_OPTIONS}
+  #     ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
 
-    pull_policy: always
+  #   pull_policy: always
 
   php72:
     <<: *default-php
@@ -107,30 +107,30 @@ services:
 
     pull_policy: always
 
-  php80:
-    <<: *default-php
-    image: devilbox/php-fpm:8.0-work
-    hostname: php80
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.209
-    volumes:
-      # Specific volumes
-      - ${DEVILBOX_PATH}/cfg/php-ini-8.0:/etc/php-custom.d:ro${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/cfg/php-fpm-8.0:/etc/php-fpm-custom.d:ro${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/cfg/php-startup-8.0:/startup.1.d:rw${MOUNT_OPTIONS}
-      # Generic volumes
-      - ${HOST_PATH_HTTPD_DATADIR}:/shared/httpd:rw${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/supervisor:/etc/supervisor/custom.d:rw${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/autostart:/startup.2.d:rw${MOUNT_OPTIONS}
-      - devilbox-mail:/var/mail:rw${MOUNT_OPTIONS}
-      # personal volumes
-      - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/log/php-fpm-8.0:/var/log/php:rw${MOUNT_OPTIONS}
-      ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
+  # php80:
+  #   <<: *default-php
+  #   image: devilbox/php-fpm:8.0-work
+  #   hostname: php80
+  #   networks:
+  #     app_net:
+  #       ipv4_address: 172.16.238.209
+  #   volumes:
+  #     # Specific volumes
+  #     - ${DEVILBOX_PATH}/cfg/php-ini-8.0:/etc/php-custom.d:ro${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/cfg/php-fpm-8.0:/etc/php-fpm-custom.d:ro${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/cfg/php-startup-8.0:/startup.1.d:rw${MOUNT_OPTIONS}
+  #     # Generic volumes
+  #     - ${HOST_PATH_HTTPD_DATADIR}:/shared/httpd:rw${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/supervisor:/etc/supervisor/custom.d:rw${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/autostart:/startup.2.d:rw${MOUNT_OPTIONS}
+  #     - devilbox-mail:/var/mail:rw${MOUNT_OPTIONS}
+  #     # personal volumes
+  #     - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
+  #     - ${DEVILBOX_PATH}/log/php-fpm-8.0:/var/log/php:rw${MOUNT_OPTIONS}
+  #     ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
 
-    pull_policy: always
+  #   pull_policy: always
 
   php81:
     <<: *default-php
@@ -240,6 +240,5 @@ services:
         bin/elasticsearch-plugin install analysis-phonetic --batch
         bin/elasticsearch-plugin install analysis-icu --batch
         bin/elasticsearch
-
 volumes:
   devilbox-elastic:
