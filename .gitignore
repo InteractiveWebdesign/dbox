@@ -17,6 +17,7 @@
 /.env
 .ssh/*
 /backups/*
+/sql-backups/*
 
 # Ignore Data dirs
 /data/*
