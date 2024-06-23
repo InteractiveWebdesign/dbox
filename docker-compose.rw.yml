@@ -53,7 +53,7 @@ services:
   #     - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
   #     - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
   #     - ${DEVILBOX_PATH}/log/php-fpm-7.1:/var/log/php:rw${MOUNT_OPTIONS}
-  #     ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
+  #     - ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
 
   #   pull_policy: always
 
@@ -78,7 +78,7 @@ services:
       - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/log/php-fpm-7.2:/var/log/php:rw${MOUNT_OPTIONS}
-      ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
+      - ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
 
     pull_policy: always
 
@@ -103,7 +103,7 @@ services:
       - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/log/php-fpm-7.4:/var/log/php:rw${MOUNT_OPTIONS}
-      ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
+      - ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
 
     pull_policy: always
 
@@ -128,7 +128,7 @@ services:
   #     - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
   #     - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
   #     - ${DEVILBOX_PATH}/log/php-fpm-8.0:/var/log/php:rw${MOUNT_OPTIONS}
-  #     ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
+  #     - ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
 
   #   pull_policy: always
 
@@ -153,7 +153,7 @@ services:
       - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/log/php-fpm-8.1:/var/log/php:rw${MOUNT_OPTIONS}
-      ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
+      - ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
 
     pull_policy: always
 
@@ -178,7 +178,7 @@ services:
       - ${DEVILBOX_PATH}/bash:/etc/bashrc-devilbox.d:rw${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/ca:/ca:rw${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/log/php-fpm-8.2:/var/log/php:rw${MOUNT_OPTIONS}
-      ###- ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
+      - ${HOST_PATH_SSH_DIR}:/home/devilbox/.ssh:ro${MOUNT_OPTIONS}
 
     pull_policy: always
 
